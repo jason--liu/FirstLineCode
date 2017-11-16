@@ -1,6 +1,7 @@
 package com.example.jason.activitytest;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -41,7 +42,11 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent[] intent = new Intent[1];
-                intent[0] = new Intent(FirstActivity.this, SecondActivity.class);
+//                intent[0] = new Intent(FirstActivity.this, SecondActivity.class);
+//                intent[0] = new Intent("com.example.jason.activitytest.ACTION_START");
+//                intent[0].addCategory("com.example.jason.activitytest.MY_CATEGORY");
+                intent[0] = new Intent(Intent.ACTION_DIAL);
+                intent[0].setData(Uri.parse("tel:10086"));
                 startActivities(intent);
             }
         });
