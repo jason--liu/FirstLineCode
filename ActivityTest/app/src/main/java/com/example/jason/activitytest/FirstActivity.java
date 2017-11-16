@@ -41,12 +41,10 @@ public class FirstActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                String data = "Hello SecondActivity";
                 Intent[] intent = new Intent[1];
-//                intent[0] = new Intent(FirstActivity.this, SecondActivity.class);
-//                intent[0] = new Intent("com.example.jason.activitytest.ACTION_START");
-//                intent[0].addCategory("com.example.jason.activitytest.MY_CATEGORY");
-                intent[0] = new Intent(Intent.ACTION_DIAL);
-                intent[0].setData(Uri.parse("tel:10086"));
+                intent[0] = new Intent(FirstActivity.this, SecondActivity.class);
+                intent[0].putExtra("extra_data", data);
                 startActivities(intent);
             }
         });
