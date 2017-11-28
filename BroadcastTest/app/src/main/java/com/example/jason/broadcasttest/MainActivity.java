@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent("com.example.jason.broadcastreceiver.MY_BROADCAST");
-                sendBroadcast(intent);
+                //sendBroadcast(intent);
+                sendOrderedBroadcast(intent, null);
             }
         });
     }
